@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Game Time</title>
+  <title>Movie Catalog</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
   <% @movies_data.each do |movie| %>
     <tr>
       <td>
-        <a href="#">
+        <a href="<%= url("/movies/#{movie["id"]}") %>">
         <%= movie["title"] %>
         </a>
       </td>

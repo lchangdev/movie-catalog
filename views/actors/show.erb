@@ -23,7 +23,9 @@
         <% if actor["id"] == params[:id] %>
           <tr>
             <td>
-              <%= actor["title"] %>
+              <a href="<%= url("/movies/#{actor["movies_id"]}") %>">
+                <%= actor["title"] %>
+              </a>
             </td>
             <td>
               <%= actor["character"] %>

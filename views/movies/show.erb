@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Movie Information</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>
+    <%= @movie_details["title"] %>
+  </h1>
+  <h3>
+    Genre: <%= @movie_details["genre"] %>
+  </h3>
+  <h3>
+    Studio: <%= @movie_details["studio"] %>
+  </h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Actors</th>
+        <th>Characters</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movie_info.each do |movie| %>
+        <% if movie["id"] == params[:id] %>
+          <tr>
+            <td>
+              <a href="<%= url("/actors/#{movie["actors_id"]}") %>">
+                <%= movie["name"] %>
+              </a>
+            </td>
+            <td>
+              <%= movie["character"] %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</body>
+</html>
