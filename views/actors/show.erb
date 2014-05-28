@@ -1,1 +1,39 @@
-<p> hello universe </p>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Actor Profile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>
+    <%= @actor_profile["name"] %>
+  </h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Movie</th>
+        <th>Character</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @actor_profile_data.each do |actor| %>
+        <% if actor["id"] == params[:id] %>
+          <tr>
+            <td>
+              <%= actor["title"] %>
+            </td>
+            <td>
+              <%= actor["character"] %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</body>
+</html>
