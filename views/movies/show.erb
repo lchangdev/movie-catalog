@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Movie Information</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Movies</title>
 </head>
+
 <body>
+
   <h1>
     <%= @movie_details["title"] %>
   </h1>
@@ -16,6 +16,7 @@
   <h3>
     Studio: <%= @movie_details["studio"] %>
   </h3>
+
   <table>
     <thead>
       <tr>
@@ -40,7 +41,6 @@
       <% end %>
     </tbody>
   </table>
-
 
 </body>
 </html>
