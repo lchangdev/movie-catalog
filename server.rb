@@ -20,6 +20,7 @@ end
 def actor_names_data
   query = 'SELECT actors.name, actors.id FROM actors
            ORDER BY actors.name'
+
   db_connection do |conn|
     actors = conn.exec(query)
   end
